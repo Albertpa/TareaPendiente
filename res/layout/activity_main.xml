@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen10"
+    android:background="@android:color/black"
+    tools:context=".MainActivity" >
+  	<TextView
+        android:id="@+id/TextoTarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/TextoTarea"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text15" />
+    
+    <!-- texto editable -->
+    <EditText 
+        android:id="@+id/campoTextoTarea"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen30"
+        android:layout_marginLeft="@dimen/dimen5" 
+        android:padding="@dimen/dimen5"      
+        android:hint="@string/DescripcionTarea"
+	    android:background="@android:color/white"
+	    
+        android:textSize="@dimen/text15"
+        android:layout_toRightOf="@+id/TextoTarea"       
+        android:inputType="text"/>    
+    
+
+   
+     <LinearLayout
+         
+         android:id="@+id/layoutTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dimen10"
+        android:layout_marginBottom="@dimen/dimen10"
+        android:paddingTop="@dimen/dimen30" 
+        android:paddingBottom="@dimen/dimen30" 
+        android:layout_below="@+id/campoTextoTarea">
+           
+         <ImageButton
+            android:id="@+id/time_tarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seleccionTime"
+            android:src="@drawable/edit_time"
+            android:background="@android:color/white"
+            android:onClick="onPickTimeButtonClick"
+            />
+         
+        <TextView
+            android:id="@+id/campoTimeTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seleccionTime"
+            android:layout_marginTop="@dimen/dimen20"
+            android:layout_marginLeft="@dimen/dimen20"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"  />
+         
+      </LinearLayout>
+      
+      <Spinner
+         android:id="@+id/prioridadSpinner"
+         android:layout_marginTop="@dimen/dimen5"
+         android:layout_height="@dimen/dimen30"
+         android:layout_width="match_parent"
+         android:background="@android:color/white"
+         android:layout_below="@+id/layoutTime"
+         android:entries="@array/prioridades"></Spinner>
+      
+       <TextView
+        android:id="@+id/textPractica"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/textPractica"         
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text10"
+       	android:layout_above="@+id/layoutBottom"
+        android:gravity="bottom"/>
+       
+      <LinearLayout 
+        android:id="@+id/layoutBottom"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"	    
+	    android:orientation="horizontal" 
+	    android:background="@android:color/black"
+	    android:paddingTop="@dimen/dimen5"
+	    android:paddingBottom="@dimen/dimen5"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentLeft="true"
+	    android:gravity="center_horizontal">
+	    
+         
+         <Button android:id="@+id/aAceptar"
+                android:tag="Aceptar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/aceptar"
+                android:onClick="accionClick"/>
+         
+         
+         <Button android:id="@+id/aBorrar"
+                android:tag="Borrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/borrar"
+                android:onClick="accionClick"/>            
+       
+       </LinearLayout>
+    
+      
+</RelativeLayout>
